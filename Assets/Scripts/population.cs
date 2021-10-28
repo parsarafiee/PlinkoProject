@@ -14,46 +14,75 @@ public class population : MonoBehaviour
 
     public GameObject backgroundPrefab;
     public Vector2 backgroundScale;
-    public GameObject buddyPrefab;
+    public GameObject rightAndLeftBoxPref;
+    public GameObject bottomBox;
 
     public GameObject finalZonePref;
+    public int howManyZone;
 
     private void Awake()
     {
+        // 
         GameObject backgroundObj = Instantiate(backgroundPrefab, Vector3.zero, Quaternion.identity);
-        GameObject rightBuddy = Instantiate(buddyPrefab, new Vector3(backgroundScale.x / 2, 0, 0), Quaternion.identity);
-        GameObject leftBuddy = Instantiate(buddyPrefab, new Vector3(-backgroundScale.x / 2, 0, 0), Quaternion.identity);
         backgroundObj.transform.localScale = new Vector3(backgroundScale.x, backgroundScale.y, 0.2f);
+
+        // generate right and left edges for the plinko 
+
+        GameObject rightBuddy = Instantiate(rightAndLeftBoxPref, new Vector3(backgroundScale.x / 2, 0, 0), Quaternion.identity);
+        GameObject leftBuddy = Instantiate(rightAndLeftBoxPref, new Vector3(-backgroundScale.x / 2, 0, 0), Quaternion.identity);
+        // 0.2 for x  and 0.7 for  z  is the best size for the side boxes otherwise it get a bit weird
         rightBuddy.transform.localScale = new Vector3(0.2f, backgroundScale.y, 0.7f);
         leftBuddy.transform.localScale = new Vector3(0.2f, backgroundScale.y, 0.7f);
-        Vector3 spawnLoc = new Vector3(0, backgroundScale.y / 2, -0.3f);
-        BallPlayerr player = Instantiate(playerPrefab, spawnLoc, Quaternion.identity).GetComponent<BallPlayerr>();
+
+        // respawn the player on the top of the plinko
+
+        Vector3 respawnPosPlayer = new Vector3(0, backgroundScale.y / 2, -0.3f);
+        BallPlayerr player = Instantiate(playerPrefab, respawnPosPlayer, Quaternion.identity).GetComponent<BallPlayerr>();
         mainCam.player = player.transform;
 
+        //   make  Plinko's bottom 
 
+        GameObject bottomEnd = Instantiate(bottomBox, new Vector3(0, (-backgroundScale.y / 2) - 0.5f, -1), Quaternion.identity);
+        bottomEnd.transform.localScale = new Vector3(backgroundScale.x, 1, 4);
+
+        //   make the trigger zones randomly on Plinko's bottom 
+
+        Vector3 FirstZoneLocation = new Vector3(-((backgroundScale.x / 2) - 1), -backgroundScale.y / 2, -1);
+        Vector3 SecondZoneLocation = new Vector3(((backgroundScale.x / 2) - 1), -backgroundScale.y / 2, -1);
+
+        float DisFir_Sec_loc = Vector3.Distance(FirstZoneLocation, SecondZoneLocation);
+        float spaceBetweenZones = DisFir_Sec_loc / (howManyZone - 1);
+
+        for (int i = 0; i < howManyZone; i++)
+        {
+            GameObject zoneFinal = Instantiate(finalZonePref, FirstZoneLocation, Quaternion.identity);
+            FirstZoneLocation.x += spaceBetweenZones;
+        }
+        int randomZonToWIn = Random.Range(0, (int)backgroundScale.x / 2);
+
+        //for (int i = 0; i < (backgroundScale.x / 2); i++)
+        //{
+        //    
+        //    if (randomZonToWIn == i)
+        //    {
+        //        zoneFinal.GetComponent<MeshRenderer>().material.color = Color.red;
+        //        //zoneFinal.tag == "kl";
+        //    }
+        //}
     }
     void Start()
     {
-        Vector3 zoneLocation = new Vector3(-((backgroundScale.x/2)-1), -backgroundScale.y / 2, -1);
-        int randomZonToWIn = Random.Range(0, (int)backgroundScale.x / 2);
-        for (int i = 0; i < (backgroundScale.x/2); i++)
-        {    
-            GameObject zoneFinal = Instantiate(finalZonePref, zoneLocation, Quaternion.identity);
-            zoneLocation.x +=2;
-            if (randomZonToWIn==i)
-            {
-                zoneFinal.GetComponent<MeshRenderer>().material.color = Color.red;
-                zoneFinal.tag == "kl";
-            }
-        }
 
 
 
 
+        // random cylander all over the background 
         for (int i = 0; i < numberOfCylinder; i++)
         {
             Vector3 loc = new Vector3(Random.Range(-((backgroundScale.x / 2)), (backgroundScale.x / 2)), Random.Range(-((backgroundScale.y / 2) - 1f), (backgroundScale.y / 2) - 1f), -0.35f);
             GameObject b = Instantiate(cylinder, loc, Quaternion.Euler(-90f, 0, 0));
+
+            // respawn all the cylanders with different random colors 
             b.GetComponent<Renderer>().material.color = new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f));
 
 

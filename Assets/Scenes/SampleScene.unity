@@ -350,8 +350,10 @@ MonoBehaviour:
   mainCam: {fileID: 963194229}
   backgroundPrefab: {fileID: 2460618820515802885, guid: c4032f6c7d6b0ee478c7f50d3b8f75e5, type: 3}
   backgroundScale: {x: 40, y: 100}
-  buddyPrefab: {fileID: 6027587554270372539, guid: 03c04c78e3107ef418facff35a1cfae8, type: 3}
+  rightAndLeftBoxPref: {fileID: 6027587554270372539, guid: 03c04c78e3107ef418facff35a1cfae8, type: 3}
+  bottomBox: {fileID: 6027587554270372539, guid: 03c04c78e3107ef418facff35a1cfae8, type: 3}
   finalZonePref: {fileID: 4764473862137352205, guid: 23ad46461765bfb4aacb7197cbb92e6f, type: 3}
+  howManyZone: 8
 --- !u!4 &2007697192
 Transform:
   m_ObjectHideFlags: 0
