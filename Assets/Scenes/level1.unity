@@ -178,6 +178,11 @@ MonoBehaviour:
     volume: 0.781
     pitch: 1
     source: {fileID: 0}
+  - name: Cylander
+    clip: {fileID: 8300000, guid: f70003a06d45b364d8f8e1a9e3592be1, type: 3}
+    volume: 0.781
+    pitch: 1
+    source: {fileID: 0}
 --- !u!81 &278952933
 AudioListener:
   m_ObjectHideFlags: 0
@@ -186,6 +191,49 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278952930}
   m_Enabled: 1
+--- !u!1 &668363206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668363208}
+  - component: {fileID: 668363207}
+  m_Layer: 0
+  m_Name: Csene Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &668363207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668363206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c53f78e67e55c49be2aa53c53c20c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &668363208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668363206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.341699, y: 22.880772, z: -0.24147797}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +456,7 @@ MonoBehaviour:
   rightAndLeftBoxPref: {fileID: 6027587554270372539, guid: 03c04c78e3107ef418facff35a1cfae8, type: 3}
   bottomBox: {fileID: 1750094237536487213, guid: 854392e19de6dce4481fba4603599456, type: 3}
   finalZonePref: {fileID: 4764473862137352205, guid: 23ad46461765bfb4aacb7197cbb92e6f, type: 3}
-  howManyZone: 5
+  howManyZone: 3
 --- !u!4 &2007697192
 Transform:
   m_ObjectHideFlags: 0

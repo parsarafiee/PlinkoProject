@@ -52,7 +52,7 @@ public class population : MonoBehaviour
 
         float DisFir_Sec_loc = Vector3.Distance(FirstZoneLocation, SecondZoneLocation);
         float spaceBetweenZones = DisFir_Sec_loc / (howManyZone - 1);
-        int randomZonToWIn = Random.Range(0, (int)backgroundScale.x / 2);
+        int randomZonToWIn = Random.Range(0, howManyZone);
 
         for (int i = 0; i < howManyZone; i++)
         {

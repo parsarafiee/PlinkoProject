@@ -51,7 +51,7 @@ public class BallPlayerr : MonoBehaviour
 
         if (collision.collider.tag == "Cylander")
         {
-
+            FindObjectOfType<AudioManager>().Play("Cylander");
             this.GetComponent<MeshRenderer>().material.color = collision.gameObject.GetComponent<MeshRenderer>().material.color;
         }
         if (collision.collider.tag =="Bottom")
