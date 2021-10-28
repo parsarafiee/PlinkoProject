@@ -8,6 +8,7 @@ TagManager:
   - winZone
   - LoseZone
   - Cylander
+  - Bottom
   layers:
   - Default
   - TransparentFX

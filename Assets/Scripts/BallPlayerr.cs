@@ -9,8 +9,8 @@ public class BallPlayerr : MonoBehaviour
 
 
     bool ballReleased = false;
-    bool winGame = false;
-    bool lose = false;
+    bool gameIsDone = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,28 +44,22 @@ public class BallPlayerr : MonoBehaviour
             rb.isKinematic = false;
         }
 
-        if (winGame)
-        {
-
-        }
 
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "winZone")
-        {
-            winGame = true;
-        }
 
-        if (collision.collider.tag == "LoseZone")
-        {
-            lose = true;
-        }
         if (collision.collider.tag == "Cylander")
         {
 
             this.GetComponent<MeshRenderer>().material.color = collision.gameObject.GetComponent<MeshRenderer>().material.color;
         }
+        if (collision.collider.tag =="Bottom")
+        {
+            rb.isKinematic = true;
+
+        }
+
     }
 
 

@@ -123,6 +123,69 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &278952930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278952931}
+  - component: {fileID: 278952932}
+  - component: {fileID: 278952933}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278952931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278952930}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &278952932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278952930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8caaed4271d02df4680796d52c73e967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayWin
+    clip: {fileID: 8300000, guid: 5f77fe23abccb6148b86ce35c71de088, type: 3}
+    volume: 0.769
+    pitch: 1
+    source: {fileID: 0}
+  - name: Playlose
+    clip: {fileID: 8300000, guid: c6b980d788ac3c04fa13eb2f2c85f39d, type: 3}
+    volume: 0.781
+    pitch: 1
+    source: {fileID: 0}
+--- !u!81 &278952933
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278952930}
+  m_Enabled: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -226,7 +289,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
@@ -235,14 +297,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -296,9 +350,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.07, y: 8.45, z: -7.356}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
+  m_Children:
+  - {fileID: 278952931}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -345,15 +400,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 7489843496556363756, guid: 3b9e1c0ec7f647649a7f239e319622ed, type: 3}
   cylinder: {fileID: 4660118179388614264, guid: acfadd2b19fde6e4a921d4acbae1168d, type: 3}
-  numberOfCylinder: 500
+  numberOfCylinder: 50
   loc1: {x: 0, y: 0, z: 0}
   mainCam: {fileID: 963194229}
   backgroundPrefab: {fileID: 2460618820515802885, guid: c4032f6c7d6b0ee478c7f50d3b8f75e5, type: 3}
-  backgroundScale: {x: 40, y: 100}
+  backgroundScale: {x: 10, y: 20}
   rightAndLeftBoxPref: {fileID: 6027587554270372539, guid: 03c04c78e3107ef418facff35a1cfae8, type: 3}
-  bottomBox: {fileID: 6027587554270372539, guid: 03c04c78e3107ef418facff35a1cfae8, type: 3}
+  bottomBox: {fileID: 1750094237536487213, guid: 854392e19de6dce4481fba4603599456, type: 3}
   finalZonePref: {fileID: 4764473862137352205, guid: 23ad46461765bfb4aacb7197cbb92e6f, type: 3}
-  howManyZone: 8
+  howManyZone: 5
 --- !u!4 &2007697192
 Transform:
   m_ObjectHideFlags: 0
@@ -366,5 +421,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
