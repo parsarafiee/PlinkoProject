@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 846700457842098057}
   m_Layer: 0
   m_Name: ZonePref
-  m_TagString: Finish
+  m_TagString: LoseZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

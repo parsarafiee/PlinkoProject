@@ -52,23 +52,19 @@ public class population : MonoBehaviour
 
         float DisFir_Sec_loc = Vector3.Distance(FirstZoneLocation, SecondZoneLocation);
         float spaceBetweenZones = DisFir_Sec_loc / (howManyZone - 1);
+        int randomZonToWIn = Random.Range(0, (int)backgroundScale.x / 2);
 
         for (int i = 0; i < howManyZone; i++)
         {
             GameObject zoneFinal = Instantiate(finalZonePref, FirstZoneLocation, Quaternion.identity);
             FirstZoneLocation.x += spaceBetweenZones;
+            if (randomZonToWIn == i)
+            {   //
+                zoneFinal.GetComponent<MeshRenderer>().material.color = Color.red;
+                zoneFinal.gameObject.tag = "winZone";
+            }
         }
-        int randomZonToWIn = Random.Range(0, (int)backgroundScale.x / 2);
 
-        //for (int i = 0; i < (backgroundScale.x / 2); i++)
-        //{
-        //    
-        //    if (randomZonToWIn == i)
-        //    {
-        //        zoneFinal.GetComponent<MeshRenderer>().material.color = Color.red;
-        //        //zoneFinal.tag == "kl";
-        //    }
-        //}
     }
     void Start()
     {
