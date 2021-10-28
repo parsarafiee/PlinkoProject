@@ -200,7 +200,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 668363208}
-  - component: {fileID: 668363207}
   m_Layer: 0
   m_Name: Csene Manager
   m_TagString: Untagged
@@ -208,18 +207,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &668363207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668363206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c53f78e67e55c49be2aa53c53c20c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &668363208
 Transform:
   m_ObjectHideFlags: 0

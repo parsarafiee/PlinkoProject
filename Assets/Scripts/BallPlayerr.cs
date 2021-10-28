@@ -6,16 +6,17 @@ public class BallPlayerr : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed;
+    public GManag Manager;
 
 
     bool ballReleased = false;
-    bool gameIsDone = false;
+    //bool gameIsDone = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Manager = this.gameObject.GetComponent<GManag>();
         rb.isKinematic = true;
     }
 
